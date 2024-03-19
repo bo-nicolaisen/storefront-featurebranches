@@ -93,6 +93,9 @@ function ReadLocalStorageData() {
 
 function InitApp() {
 
+
+    //to do   create loadinscreen call
+
     InitializeBasket()
     GetProductData()
     GetCategoryData()
@@ -255,10 +258,14 @@ function NavCallback(CategoryName) {
     //console.log(CategoryName);
     CloseMobileNav()
     // get data from API  bug API url og send videre
+
+    // to do call loading screen 
+
     if (CategoryName == "All") {
         CreateProductView(myProducts)
     }
     else {
+
         let myCategoryURL = `https://dummyjson.com/products/category/${CategoryName}`
 
         GetProductsByCategory(myCategoryURL)
@@ -301,6 +308,8 @@ function ProductCallback(myId) {
 //----------------------------------------------------------------------
 
 function LogoCallback() {
+
+    // to do insert loading screen
     GetProductData()
 }
 
@@ -450,6 +459,13 @@ function ToggleMenu() {
 
 
 /* view code------------------------------------------------------------- */
+
+function CreateLoadingScreen() {
+
+    let myLoadingHTML = `<h2>Loading...</h2>`
+
+    productSection.innerHTML = myLoadingHTML
+}
 
 function ShowMobileNav() {
 
